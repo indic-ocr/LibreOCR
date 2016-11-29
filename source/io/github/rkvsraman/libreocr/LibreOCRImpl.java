@@ -46,9 +46,17 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 	private static final String[] m_serviceNames = { "io.github.rkvsraman.LibreOCR" };
 	String serverName = "";
 	JDialog dialog = null;
+	Properties langProperties= new Properties();
+	
 
 	public LibreOCRImpl(XComponentContext context) {
 		m_xContext = context;
+		try {
+			langProperties.load(LibreOCRImpl.class.getResourceAsStream("lang.properties"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	};
 
 	public static XSingleComponentFactory __getComponentFactory(String sImplementationName) {
@@ -103,22 +111,23 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				fileChooser.showOpenDialog(dialog);
+				int i =fileChooser.showOpenDialog(dialog);
+				if(i == JFileChooser.APPROVE_OPTION)
+				{
+					fileButton.setText(fileChooser.getSelectedFile().getName());
+				}
 
 			}
 		});
 
 		JComboBox<String> langList = new JComboBox<String>();
 		DefaultComboBoxModel<String> listModel = new DefaultComboBoxModel<String>();
-		listModel.addElement("ben");
-		listModel.addElement("eng");
-		listModel.addElement("guj");
-		listModel.addElement("hin");
-		listModel.addElement("kan");
-		listModel.addElement("ori");
-		listModel.addElement("pan");
-		listModel.addElement("tam");
+		for(String s : langProperties.stringPropertyNames())
+		{
+			listModel.addElement(s);
+		}
 
+		
 		langList.setModel(listModel);
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setIndeterminate(false);
@@ -163,7 +172,7 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 
 	protected void doUpload(File selectedFile, String elementAt) {
 		// TODO Auto-generated method stub
-		HttpRequest httpRequest = HttpRequest.post("http://" + serverName + ":8081/ocr").form("lang", elementAt,
+		HttpRequest httpRequest = HttpRequest.post("http://" + serverName + ":8081/ocr").form("lang", langProperties.getProperty(elementAt),
 
 				"myfile", selectedFile);
 		HttpResponse response = httpRequest.send();
