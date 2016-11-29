@@ -46,8 +46,7 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 	private static final String[] m_serviceNames = { "io.github.rkvsraman.LibreOCR" };
 	String serverName = "";
 	JDialog dialog = null;
-	Properties langProperties= new Properties();
-	
+	Properties langProperties = new Properties();
 
 	public LibreOCRImpl(XComponentContext context) {
 		m_xContext = context;
@@ -111,9 +110,8 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				int i =fileChooser.showOpenDialog(dialog);
-				if(i == JFileChooser.APPROVE_OPTION)
-				{
+				int i = fileChooser.showOpenDialog(dialog);
+				if (i == JFileChooser.APPROVE_OPTION) {
 					fileButton.setText(fileChooser.getSelectedFile().getName());
 				}
 
@@ -122,13 +120,12 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 
 		JComboBox<String> langList = new JComboBox<String>();
 		DefaultComboBoxModel<String> listModel = new DefaultComboBoxModel<String>();
-		for(String s : langProperties.stringPropertyNames())
-		{
+		for (String s : langProperties.stringPropertyNames()) {
 			listModel.addElement(s);
 		}
 
-		
 		langList.setModel(listModel);
+		JSpinner spinner = new JSpinner(new SpinnerNumberModel(300, 75, 600, 25));
 		JProgressBar progressBar = new JProgressBar();
 		progressBar.setIndeterminate(false);
 		progressBar.setVisible(true);
@@ -147,11 +144,13 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 				progressBar.setIndeterminate(true);
 				okButton.setText("Uploading....");
 
-				doUpload(fileChooser.getSelectedFile(), listModel.getElementAt(langList.getSelectedIndex()));
+				SpinnerNumberModel model = (SpinnerNumberModel)spinner.getModel();
+				
+				doUpload(fileChooser.getSelectedFile(), listModel.getElementAt(langList.getSelectedIndex()) , model.getNumber().intValue());
 
 			}
 		});
-		JSpinner spinner = new JSpinner(new SpinnerNumberModel(300, 75, 600, 25));
+	
 
 		dialog.getContentPane().add(new JLabel("Server Address:"));
 		dialog.getContentPane().add(serverAddress);
@@ -170,11 +169,10 @@ public final class LibreOCRImpl extends WeakBase implements com.sun.star.lang.XS
 		dialog.setVisible(true);
 	}
 
-	protected void doUpload(File selectedFile, String elementAt) {
+	protected void doUpload(File selectedFile, String elementAt, int spinnervalue) {
 		// TODO Auto-generated method stub
-		HttpRequest httpRequest = HttpRequest.post("http://" + serverName + ":8081/ocr").form("lang", langProperties.getProperty(elementAt),
-
-				"myfile", selectedFile);
+		HttpRequest httpRequest = HttpRequest.post("http://" + serverName + ":8081/ocr").form("lang",
+				langProperties.getProperty(elementAt),"dpi",String.valueOf(spinnervalue),"myfile", selectedFile);
 		HttpResponse response = httpRequest.send();
 
 		byte[] responseBytes = response.bodyBytes();
