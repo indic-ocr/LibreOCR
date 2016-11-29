@@ -1,0 +1,6 @@
+###### Progress log entry 2016-11-29 12:29:20 ######
+ERROR: (com.sun.star.lang.IllegalArgumentException) { { { Message = "There is no such extension deployed: io.github.rkvsraman.libreocr", Context = (com.sun.star.uno.XInterface) @3047710 } }, ArgumentPosition = (short) -1 }
+ERROR: (com.sun.star.lang.IllegalArgumentException) { { { Message = "There is no such extension deployed: io.github.rkvsraman.libreocr", Context = (com.sun.star.uno.XInterface) @3047710 } }, ArgumentPosition = (short) -1 }
+Copying: LibreOCR.oxt
+###### Progress log entry 2016-11-29 12:44:04 ######
+###### Progress log entry 2016-11-29 13:41:49 ######

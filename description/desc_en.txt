@@ -1,0 +1,5 @@
+LibreOCR 
+
+
+This extension converts an image into ODT. Uses an external service.
+

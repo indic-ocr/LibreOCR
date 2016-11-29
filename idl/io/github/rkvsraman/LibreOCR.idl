@@ -1,0 +1,12 @@
+#ifndef __io_github_rkvsraman_libreocr_idl__
+#define __io_github_rkvsraman_libreocr_idl__
+
+#include <com/sun/star/task/XJobExecutor.idl>
+module io { module github { module rkvsraman { 	
+
+	service LibreOCR : com::sun::star::task::XJobExecutor  {
+
+	};
+
+ }; }; };
+#endif

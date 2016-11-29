@@ -1,0 +1,4 @@
+ORIGIN=$UNO_USER_PACKAGES_CACHE/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend
+UNO_JAVA_CLASSPATH=$UNO_USER_PACKAGES_CACHE/uno_packages/lu364535k7yk.tmp_/LibreOCR.oxt/LibreOCR.jar
+UNO_TYPES=?$UNO_USER_PACKAGES_CACHE/uno_packages/lu364535k7yk.tmp_/LibreOCR.oxt/types.rdb
+UNO_SERVICES=?$ORIGIN/common.rdb ${$ORIGIN/${_OS}_${_ARCH}rc:UNO_SERVICES}

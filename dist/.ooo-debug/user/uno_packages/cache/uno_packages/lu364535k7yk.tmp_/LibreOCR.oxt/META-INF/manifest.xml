@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
+	<manifest:file-entry manifest:full-path="LibreOCR.jar" manifest:media-type="application/vnd.sun.star.uno-component;type=Java"/>
+	<manifest:file-entry manifest:full-path="types.rdb" manifest:media-type="application/vnd.sun.star.uno-typelibrary;type=RDB"/>
+	<manifest:file-entry manifest:full-path="description.xml" manifest:media-type="application/vnd.sun.star.package-bundle-description;locale=en-IN"/>
+</manifest:manifest>

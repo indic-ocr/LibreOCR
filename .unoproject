@@ -1,0 +1,12 @@
+#UNO project configuration file
+#Tue Nov 29 11:59:31 IST 2016
+project.srcdir=/source
+regclassname=io.github.rkvsraman.libreocr.RegistrationHandler
+javaversion=java5
+project.sdk=5.1.4.2
+project.ooo=LibreOffice 5.1
+project.implementation=libreocr
+project.build=build
+project.language=Java
+project.prefix=io.github.rkvsraman
+project.idl=/idl

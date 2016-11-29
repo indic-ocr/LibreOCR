@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<comp:component-backend-db xmlns:comp="http://openoffice.org/extensionmanager/component-registry/2010"><comp:component url="vnd.sun.star.expand:$UNO_USER_PACKAGES_CACHE/uno_packages/lu364535k7yk.tmp_/LibreOCR.oxt/LibreOCR.jar"><comp:java-type-library>true</comp:java-type-library><comp:implementation-names><comp:name>io.github.rkvsraman.libreocr.LibreOCRImpl</comp:name></comp:implementation-names></comp:component></comp:component-backend-db>

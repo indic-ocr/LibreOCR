@@ -1,0 +1,11 @@
+#ifndef __io_github_rkvsraman_xlibreocr_idl__
+#define __io_github_rkvsraman_xlibreocr_idl__
+
+module io { module github { module rkvsraman { 	
+
+	interface XLibreOCR {
+
+	};
+
+ }; }; };
+#endif
