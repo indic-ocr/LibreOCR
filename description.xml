@@ -2,9 +2,15 @@
 <description xmlns="http://openoffice.org/extensions/description/2006" xmlns:d="http://openoffice.org/extensions/description/2006" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<version value="0.1"/>
 	<identifier value="io.github.rkvsraman.libreocr"/>
+	<publisher>
+		<name lang="en" xlink:href="http://indic-ocr.github.io">RKVS Raman</name>
+	</publisher>
 	<display-name>
 		<name lang="en">LibreOCR</name>
 	</display-name>
+	<icon>
+		<default xlink:href="images/indicocr128.png"/>
+	</icon>
 	<extension-description>
 		<src lang="en" xlink:href="description/desc_en.txt"/>
 	</extension-description>
