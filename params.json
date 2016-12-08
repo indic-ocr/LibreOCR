@@ -1,6 +1,6 @@
 {
   "name": "Libre OCR",
   "tagline": "Libreoffice extension to convert image to editable document ",
-  "body": "###LibreOCR\r\n\r\nLibreOCR uses [OCR Service](https://indic-ocr.github.io/ocrservice/)  to convert uploaded images to editable ODT documents. \r\n\r\nLibreOCR is a [Libreoffice](http://www.libreoffice.org) extension that provides a tool bar button to upload images. \r\n\r\nInstall the extension from [here](https://github.com/indic-ocr/LibreOCR/raw/master/dist/LibreOCR.oxt) or [here](https://extensions.libreoffice.org/extensions/libre-ocr)\r\n\r\n\r\n\r\n### Authors and Contributors\r\n@rkvsraman\r\n\r\n",
+  "body": "###LibreOCR\r\n\r\nLibreOCR uses [OCR Service](https://indic-ocr.github.io/ocrservice/)  to convert uploaded images to editable ODT documents. \r\n\r\nLibreOCR is a [Libreoffice](http://www.libreoffice.org) extension that provides a tool bar button to upload images. \r\n\r\nInstall the extension from [here](https://github.com/indic-ocr/LibreOCR/raw/master/dist/LibreOCR.oxt) or [here](https://extensions.libreoffice.org/extensions/libre-ocr)\r\n\r\n![Screenshot 1](1.png)\r\n\r\n======\r\n![Screenshot 2](2.png)\r\n\r\n======\r\n![Screenshot 3](3.png)\r\n\r\n### Authors and Contributors\r\n@rkvsraman\r\n\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }
